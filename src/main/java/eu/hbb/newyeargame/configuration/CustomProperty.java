@@ -10,5 +10,8 @@ import org.springframework.stereotype.Component;
 public class CustomProperty {
 
     private String json;
+    private String image;
+    private String sound;
+    private String music;
 
 }

@@ -13,6 +13,6 @@ import java.util.Optional;
 public interface RoundRepository extends CrudRepository<RoundEntity, Long> {
 
     Page<RoundEntity> findAll(Pageable pageable);
-    Optional<List<RoundEntity>> findAllByGameid(long id);
+    Optional<List<RoundEntity>> findAllByGameidOrderById(long id);
 
 }

@@ -13,6 +13,6 @@ import java.util.Optional;
 public interface QuestionRepository extends CrudRepository<QuestionEntity, Long> {
 
     Page<QuestionEntity> findAll(Pageable pageable);
-    Optional<List<QuestionEntity>> findAllByThemeid(long id);
+    Optional<List<QuestionEntity>> findAllByThemeidOrderById(long id);
 
 }

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "theme")
+@Table(schema = "newyeargame", name = "theme")
 public class ThemeEntity {
 
     @Id

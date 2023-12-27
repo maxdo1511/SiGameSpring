@@ -13,6 +13,6 @@ import java.util.Optional;
 public interface ThemeRepository extends CrudRepository<ThemeEntity, Long> {
 
     Page<ThemeEntity> findAll(Pageable pageable);
-    Optional<List<ThemeEntity>> findAllByRoundid(long id);
+    Optional<List<ThemeEntity>> findAllByRoundidOrderById(long id);
 
 }

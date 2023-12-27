@@ -1,8 +1,8 @@
 package eu.hbb.newyeargame.service;
 
 import eu.hbb.newyeargame.configuration.CustomProperty;
-import eu.hbb.newyeargame.entity.Game;
-import eu.hbb.newyeargame.entity.GameJSON;
+import eu.hbb.newyeargame.models.Game;
+import eu.hbb.newyeargame.models.GameJSON;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +29,7 @@ public class InitializerService {
     @PostConstruct
     private void postConstruct() {
         loadAllJSON(PATH);
+        saveAllJSON();
     }
 
     /**
@@ -47,6 +48,12 @@ public class InitializerService {
                     loadAllJSON(file.getPath());
                 }
             }
+        }
+    }
+
+    private void saveAllJSON() {
+        for (Game game : loadedGames) {
+            gameService.saveGameToDatabaseIfNotExists(game);
         }
     }
 

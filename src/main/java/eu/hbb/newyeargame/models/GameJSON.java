@@ -1,5 +1,9 @@
-package eu.hbb.newyeargame.entity;
+package eu.hbb.newyeargame.models;
 
+import eu.hbb.newyeargame.entity.GameEntity;
+import eu.hbb.newyeargame.entity.QuestionEntity;
+import eu.hbb.newyeargame.entity.RoundEntity;
+import eu.hbb.newyeargame.entity.ThemeEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

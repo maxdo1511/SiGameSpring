@@ -1,6 +1,8 @@
 package eu.hbb.newyeargame.service;
 
 import eu.hbb.newyeargame.entity.*;
+import eu.hbb.newyeargame.models.Game;
+import eu.hbb.newyeargame.models.GameJSON;
 import eu.hbb.newyeargame.repo.*;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,16 +77,31 @@ public class GameService {
     }
 
     @Transactional
+    public void saveGameToDatabaseIfNotExists(Game game) {
+        if (gameRepository.existsById(game.getGame().getId())) {
+            return;
+        }
+        gameRepository.save(game.getGame());
+        for(RoundEntity round : game.getRounds()) {
+            roundRepository.save(round);
+            for(ThemeEntity theme : game.getThemes().get(round)) {
+                themeRepository.save(theme);
+                questionRepository.saveAll(game.getQuestions().get(theme));
+            }
+        }
+    }
+
+    @Transactional
     public Game createGameById(long id) {
         GameEntity gameEntity = gameRepository.findById(id).orElseThrow();
-        List<RoundEntity> roundEntities = roundRepository.findAllByGameid(gameEntity.getId()).orElseThrow();
+        List<RoundEntity> roundEntities = roundRepository.findAllByGameidOrderById(gameEntity.getId()).orElseThrow();
         Map<RoundEntity, List<ThemeEntity>> themes = new HashMap<>();
         Map<ThemeEntity, List<QuestionEntity>> questions = new HashMap<>();
         for (RoundEntity round : roundEntities) {
-            List<ThemeEntity> themeEntities = themeRepository.findAllByRoundid(round.getId()).orElseThrow();
+            List<ThemeEntity> themeEntities = themeRepository.findAllByRoundidOrderById(round.getId()).orElseThrow();
             themes.put(round, themeEntities);
             for (ThemeEntity theme : themeEntities) {
-                List<QuestionEntity> questionEntities = questionRepository.findAllByThemeid(theme.getId()).orElseThrow();
+                List<QuestionEntity> questionEntities = questionRepository.findAllByThemeidOrderById(theme.getId()).orElseThrow();
                 questions.put(theme, questionEntities);
             }
         }
