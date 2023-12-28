@@ -43,6 +43,7 @@
 		{
 			"id": 1,
 			"themeid": 1,
+			"cost": 100,
 			"title": "Вопрос 0",
 			"answer": "Ответ 0",
 			"questionType": "TEXT"
@@ -50,6 +51,7 @@
 		{
 			"id": 2,
 			"themeid": 1,
+			"cost": 200,
 			"title": "Вопрос 1",
 			"answer": "Ответ 1",
 			"questionType": "TEXT"
@@ -57,6 +59,7 @@
 		{
 			"id": 3,
 			"themeid": 1,
+			"cost": 300,
 			"title": "Вопрос 2",
 			"answer": "Ответ 2",
 			"questionType": "TEXT"
@@ -64,6 +67,7 @@
 		{
 			"id": 4,
 			"themeid": 1,
+			"cost": 400,
 			"title": "Вопрос 3",
 			"answer": "Ответ 3",
 			"questionType": "TEXT"
@@ -71,6 +75,7 @@
 		{
 			"id": 5,
 			"themeid": 1,
+			"cost": 500,
 			"title": "Вопрос 4",
 			"answer": "Ответ 4",
 			"questionType": "TEXT"
@@ -79,6 +84,7 @@
 		{
 			"id": 6,
 			"themeid": 2,
+			"cost": 100,
 			"title": "Вопрос 5",
 			"answer": "Ответ 5",
 			"questionType": "TEXT"
@@ -86,6 +92,7 @@
 		{
 			"id": 7,
 			"themeid": 2,
+			"cost": 200,
 			"title": "Вопрос 6",
 			"answer": "Ответ 6",
 			"questionType": "TEXT"
@@ -93,6 +100,7 @@
 		{
 			"id": 8,
 			"themeid": 2,
+			"cost": 300,
 			"title": "Вопрос 7",
 			"answer": "Ответ 7",
 			"questionType": "TEXT"
@@ -100,6 +108,7 @@
 		{
 			"id": 9,
 			"themeid": 2,
+			"cost": 400,
 			"title": "Вопрос 8",
 			"answer": "Ответ 8",
 			"questionType": "TEXT"
@@ -107,6 +116,7 @@
 		{
 			"id": 10,
 			"themeid": 2,
+			"cost": 500,
 			"title": "Вопрос 9",
 			"answer": "Ответ 9",
 			"questionType": "TEXT"
@@ -115,6 +125,7 @@
 		{
 			"id": 11,
 			"themeid": 3,
+			"cost": 100,
 			"title": "Вопрос 10",
 			"answer": "Ответ 10",
 			"questionType": "TEXT"
@@ -122,6 +133,7 @@
 		{
 			"id": 12,
 			"themeid": 3,
+			"cost": 200,
 			"title": "Вопрос 11",
 			"answer": "Ответ 11",
 			"questionType": "TEXT"
@@ -129,6 +141,7 @@
 		{
 			"id": 13,
 			"themeid": 3,
+			"cost": 300,
 			"title": "Вопрос 12",
 			"answer": "Ответ 12",
 			"questionType": "TEXT"
@@ -136,6 +149,7 @@
 		{
 			"id": 14,
 			"themeid": 3,
+			"cost": 400,
 			"title": "Вопрос 13",
 			"answer": "Ответ 13",
 			"questionType": "TEXT"
@@ -143,6 +157,7 @@
 		{
 			"id": 15,
 			"themeid": 3,
+			"cost": 500,
 			"title": "Вопрос 14",
 			"answer": "Ответ 14",
 			"questionType": "TEXT"
@@ -151,6 +166,7 @@
 		{
 			"id": 16,
 			"themeid": 4,
+			"cost": 100,
 			"title": "Вопрос 15",
 			"answer": "Ответ 15",
 			"questionType": "TEXT"
@@ -158,6 +174,7 @@
 		{
 			"id": 17,
 			"themeid": 4,
+			"cost": 200,
 			"title": "Вопрос 16",
 			"answer": "Ответ 16",
 			"questionType": "TEXT"
@@ -165,6 +182,7 @@
 		{
 			"id": 18,
 			"themeid": 4,
+			"cost": 300,
 			"title": "Вопрос 17",
 			"answer": "Ответ 17",
 			"questionType": "TEXT"
@@ -172,6 +190,7 @@
 		{
 			"id": 19,
 			"themeid": 4,
+			"cost": 400,
 			"title": "Вопрос 18",
 			"answer": "Ответ 18",
 			"questionType": "TEXT"
@@ -179,6 +198,7 @@
 		{
 			"id": 20,
 			"themeid": 4,
+			"cost": 500,
 			"title": "Вопрос 19",
 			"answer": "Ответ 19",
 			"questionType": "TEXT"
@@ -187,6 +207,7 @@
 		{
 			"id": 21,
 			"themeid": 5,
+			"cost": 100,
 			"title": "Вопрос 20",
 			"answer": "Ответ 20",
 			"questionType": "TEXT"
@@ -194,6 +215,7 @@
 		{
 			"id": 22,
 			"themeid": 5,
+			"cost": 200,
 			"title": "Вопрос 21",
 			"answer": "Ответ 21",
 			"questionType": "TEXT"
@@ -201,6 +223,7 @@
 		{
 			"id": 23,
 			"themeid": 5,
+			"cost": 300,
 			"title": "Вопрос 22",
 			"answer": "Ответ 22",
 			"questionType": "TEXT"
@@ -208,6 +231,7 @@
 		{
 			"id": 24,
 			"themeid": 5,
+			"cost": 400,
 			"title": "Вопрос 23",
 			"answer": "Ответ 23",
 			"questionType": "TEXT"
@@ -215,6 +239,7 @@
 		{
 			"id": 25,
 			"themeid": 5,
+			"cost": 500,
 			"title": "Вопрос 24",
 			"answer": "Ответ 24",
 			"questionType": "TEXT"

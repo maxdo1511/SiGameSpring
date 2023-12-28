@@ -62,8 +62,12 @@ public class ImageService {
         Files.delete(path);
     }
 
-    public File getImage(String dir, String fileName) throws IOException {
-        String imagePath = dir + fileName;
+    public File getQuestionImage(long questionId) throws IOException {
+        String attribute = questionRepository.findQuestionEntityById(questionId).orElseThrow().getQuestionAttribute();
+        if (!QuestionType.equalsAttributeType(attribute, QuestionType.IMAGE)) {
+            throw new RuntimeException("questionType is " + attribute.split("_")[0] + " but must be " + QuestionType.IMAGE.toString());
+        }
+        String imagePath = customProperty.getImage() + attribute.split("_", 2)[1] + ".png";
         return new File(imagePath);
     }
 }

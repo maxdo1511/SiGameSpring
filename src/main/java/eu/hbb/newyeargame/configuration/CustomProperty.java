@@ -13,5 +13,6 @@ public class CustomProperty {
     private String image;
     private String sound;
     private String music;
+    private int roundStartTime;
 
 }

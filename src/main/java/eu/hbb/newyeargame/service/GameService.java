@@ -92,7 +92,7 @@ public class GameService {
     }
 
     @Transactional
-    public Game createGameById(long id) {
+    public Game getGameById(long id) {
         GameEntity gameEntity = gameRepository.findById(id).orElseThrow();
         List<RoundEntity> roundEntities = roundRepository.findAllByGameidOrderById(gameEntity.getId()).orElseThrow();
         Map<RoundEntity, List<ThemeEntity>> themes = new HashMap<>();
@@ -111,5 +111,9 @@ public class GameService {
                 themes(themes).
                 questions(questions).
                 build();
+    }
+
+    public boolean existsGameById(long id) {
+        return gameRepository.existsById(id);
     }
 }

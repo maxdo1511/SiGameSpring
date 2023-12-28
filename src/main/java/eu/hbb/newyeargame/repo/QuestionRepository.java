@@ -14,5 +14,6 @@ public interface QuestionRepository extends CrudRepository<QuestionEntity, Long>
 
     Page<QuestionEntity> findAll(Pageable pageable);
     Optional<List<QuestionEntity>> findAllByThemeidOrderById(long id);
+    Optional<QuestionEntity> findQuestionEntityById(long id);
 
 }

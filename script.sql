@@ -62,7 +62,8 @@ create table question
     title              text    not null,
     answer             text    not null,
     question_type      text    not null,
-    question_attribute text    not null
+    question_attribute text,
+    cost               integer
 );
 
 alter table question

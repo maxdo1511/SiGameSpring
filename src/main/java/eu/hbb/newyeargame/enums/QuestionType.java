@@ -7,4 +7,8 @@ public enum QuestionType {
     IMAGE,
     SOUND;
 
+    public static boolean equalsAttributeType(String attribute, QuestionType questionType) {
+        return attribute.split("_")[0].equals(questionType.toString());
+    }
+
 }

@@ -15,6 +15,7 @@ public interface GameRepository extends CrudRepository<GameEntity, Long> {
     Optional<GameEntity> findByAuthor(String author);
     Optional<GameEntity> findByName(String name);
     Optional<GameEntity> findById(long id);
+    boolean existsGameEntityById(long id);
 
 
 }

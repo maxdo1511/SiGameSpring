@@ -30,7 +30,7 @@ public class ImageController {
     }
 
     @PostMapping("/load-icon")
-    ResponseEntity<?> load_icon(@RequestBody ImageSaveRequest request) {
+    ResponseEntity<?> saveImage(@RequestBody ImageSaveRequest request) {
         try {
             imageService.saveImage(request);
         }catch (Exception e) {
@@ -39,13 +39,14 @@ public class ImageController {
         return ResponseEntity.ok("Success");
     }
 
-    @GetMapping("/get/{name}")
-    ResponseEntity<?> getNewsImage(@PathVariable String name) {
+    @GetMapping("/get/{id}")
+    ResponseEntity<?> getQuestionImage(@PathVariable String id) {
         try {
-            File img = imageService.getImage(customProperty.getImage(), name);
+            long questionId = Long.parseLong(id);
+            File img = imageService.getQuestionImage(questionId);
             return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG).body(Files.readAllBytes(img.toPath()));
         }catch (IOException e) {
-            return null;
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
 

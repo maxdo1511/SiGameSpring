@@ -19,6 +19,7 @@ public class QuestionEntity {
     private Long id;
 
     private long themeid;
+    private int cost;
     private String title;
     private String answer;
     private String questionType;
