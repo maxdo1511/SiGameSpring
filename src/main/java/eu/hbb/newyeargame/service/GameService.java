@@ -106,11 +106,21 @@ public class GameService {
             }
         }
         return Game.builder().
+                id(id).
                 game(gameEntity).
                 rounds(roundEntities).
                 themes(themes).
                 questions(questions).
                 build();
+    }
+
+    @Transactional
+    public List<Game> getAllGames() {
+        List<Game> games = new ArrayList<>();
+        for (GameEntity gameEntity : gameRepository.findAll()) {
+            games.add(getGameById(gameEntity.getId()));
+        }
+        return games;
     }
 
     public boolean existsGameById(long id) {

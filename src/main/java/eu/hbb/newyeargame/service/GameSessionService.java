@@ -58,6 +58,8 @@ public class GameSessionService {
         if (!gameService.existsGameById(gameid)) {
             throw new RuntimeException("No game with id " + gameid);
         }
+        GameStage.GAME_SELECTION.checkPermissionAndThrowExceptionIfNotValid(gameSession.getStage());
+
         gameSession.setGame(gameid);
         gameSession.setStage(GameStage.TEAMS_INIT);
     }
@@ -144,12 +146,34 @@ public class GameSessionService {
             throw new RuntimeException("Incorrect stage " + gameSession.getStage());
         }
 
+        Map<Long, Boolean> statuses = new HashMap<>();
+        for (QuestionEntity questionEntity : gameSession.getQuestions().keySet()) {
+            statuses.put(questionEntity.getId(), gameSession.getQuestions().get(questionEntity));
+        }
+
         // Game game = gameService.getGameById(gameSession.getGame());
         return RoundInfoResponse.builder()
                 .ansTeam(gameSession.getTeamQueue().peek())
                 .name(gameSession.getCurrentRound().getName())
-                .questionEntities(gameSession.getQuestions())
+                .themes(gameService.getGameById(gameSession.getGame()).getThemes().get(gameSession.getCurrentRound()).stream().map(ThemeEntity::getName).toList())
+                .questionEntities(gameSession.getQuestions().keySet().stream().toList())
+                .questionStatuses(statuses)
                 .build();
+    }
+
+    public Team getCurrentTeam(String uuid) {
+        GameSession gameSession = getGameSessionSafe(uuid);
+        if (!GameStage.ROUND_START.stageMoreThan(gameSession.getStage())) {
+            throw new RuntimeException("Incorrect stage " + gameSession.getStage());
+        }
+
+        String teamUUID = gameSession.getTeamQueue().peek();
+        Team team = gameSession.getTeams().get(teamUUID);
+        if (team == null) {
+            throw new RuntimeException("No teams in queue");
+        }
+
+        return team;
     }
 
     private void fillQuestions(Game game, GameSession gameSession) {
@@ -237,7 +261,9 @@ public class GameSessionService {
     }
 
     private boolean checkNextRound(GameSession gameSession) {
-        return gameSession.getQuestions().values().stream().filter(v -> v).count() == gameSession.getQuestions().size();
+        long c = gameSession.getQuestions().values().stream().filter(v -> !v).count();
+        long s = gameSession.getQuestions().size();
+        return c == s;
     }
 
 }

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/game")
 public class GameController {
@@ -25,5 +27,11 @@ public class GameController {
         long gameid = Long.parseLong(id);
         Game game = gameService.getGameById(gameid);
         return ResponseEntity.ok(game);
+    }
+
+    @GetMapping("/get/games/all")
+    ResponseEntity<?> getAllGames() {
+        List<Game> games = gameService.getAllGames();
+        return ResponseEntity.ok(games);
     }
 }

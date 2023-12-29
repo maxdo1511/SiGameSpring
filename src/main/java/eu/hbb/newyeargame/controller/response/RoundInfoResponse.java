@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.Map;
 
 @Data
@@ -16,6 +17,8 @@ public class RoundInfoResponse {
 
     private String name;
     private String ansTeam;
-    private Map<QuestionEntity, Boolean> questionEntities;
+    private List<String> themes;
+    private List<QuestionEntity> questionEntities;
+    private Map<Long, Boolean> questionStatuses;
 
 }

@@ -37,7 +37,7 @@ public class GameSessionController {
         }
     }
 
-    @PutMapping("/select/game")
+    @PostMapping("/select/game")
     ResponseEntity<?> selectGame(@RequestBody SelectGameRequest request) {
         try {
             gameSessionService.selectGame(request.getUuid(), request.getGameid());
@@ -49,7 +49,7 @@ public class GameSessionController {
         }
     }
 
-    @PutMapping("/add/team")
+    @PostMapping("/add/team")
     ResponseEntity<?> addTeam(@RequestBody AddTeamRequest request) {
         try {
             gameSessionService.addTeam(request.getUuid(), request.getName(), request.getMembers().get(0), request.getMembers());
@@ -98,7 +98,7 @@ public class GameSessionController {
     }
 
     @PostMapping("/question/result")
-    ResponseEntity<?> questionAnswered(@RequestBody QuestionResultRequest request) {
+    ResponseEntity<?> questionAnsweredResult(@RequestBody QuestionResultRequest request) {
         try {
             gameSessionService.questionAnswerResult(request.getUuid(), request.getIsTrue());
             return ResponseEntity.ok("Success");
@@ -125,6 +125,28 @@ public class GameSessionController {
     ResponseEntity<?> getSessionById(@PathVariable String uuid) {
         try {
             return ResponseEntity.ok(gameSessionService.getGameSession(uuid));
+        }catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/getTeams/{uuid}")
+    ResponseEntity<?> getSessionTeams(@PathVariable String uuid) {
+        try {
+            return ResponseEntity.ok(gameSessionService.getGameSession(uuid).getTeams().values());
+        }catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/getAnsTeam/{uuid}")
+    ResponseEntity<?> getAnsTeam(@PathVariable String uuid) {
+        try {
+            return ResponseEntity.ok(gameSessionService.getCurrentTeam(uuid));
         }catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }catch (Exception e) {

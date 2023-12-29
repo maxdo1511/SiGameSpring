@@ -18,6 +18,7 @@ import java.util.Map;
 @NoArgsConstructor
 public class Game {
 
+    private long id;
     private GameEntity game;
     private List<RoundEntity> rounds;
     private Map<RoundEntity, List<ThemeEntity>> themes;
