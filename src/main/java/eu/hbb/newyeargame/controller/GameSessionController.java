@@ -121,6 +121,17 @@ public class GameSessionController {
         }
     }
 
+    @GetMapping("/get/winner/{id}")
+    ResponseEntity<?> getWinner(@PathVariable String id) {
+        try {
+            return ResponseEntity.ok(gameSessionService.getWinner(id));
+        }catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
     @GetMapping("/getByUUID/{uuid}")
     ResponseEntity<?> getSessionById(@PathVariable String uuid) {
         try {

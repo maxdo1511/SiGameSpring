@@ -142,7 +142,7 @@ public class GameSessionService {
 
     public RoundInfoResponse getRound(String uuid) {
         GameSession gameSession = getGameSessionSafe(uuid);
-        if (!GameStage.ROUND_START.stageMoreThan(gameSession.getStage())) {
+        if (!GameStage.TEAMS_INIT.stageMoreThan(gameSession.getStage())) {
             throw new RuntimeException("Incorrect stage " + gameSession.getStage());
         }
 
@@ -151,11 +151,16 @@ public class GameSessionService {
             statuses.put(questionEntity.getId(), gameSession.getQuestions().get(questionEntity));
         }
 
+        List<String> themes = new ArrayList<>(gameService.getGameById(gameSession.getGame()).getThemes().get(gameSession.getCurrentRound()).stream().map(ThemeEntity::getName).toList());
+        for (int i = 0; i < themes.size(); i++) {
+            themes.set(i, addNewlines(themes.get(i)));
+        }
+
         // Game game = gameService.getGameById(gameSession.getGame());
         return RoundInfoResponse.builder()
                 .ansTeam(gameSession.getTeamQueue().peek())
                 .name(gameSession.getCurrentRound().getName())
-                .themes(gameService.getGameById(gameSession.getGame()).getThemes().get(gameSession.getCurrentRound()).stream().map(ThemeEntity::getName).toList())
+                .themes(themes)
                 .questionEntities(gameSession.getQuestions().keySet().stream().toList())
                 .questionStatuses(statuses)
                 .build();
@@ -174,6 +179,13 @@ public class GameSessionService {
         }
 
         return team;
+    }
+
+    public Team getWinner(String uuid) {
+        GameSession gameSession = getGameSessionSafe(uuid);
+        GameStage.RESULT.checkPermissionAndThrowExceptionIfNotValid(gameSession.getStage());
+
+        return gameSession.getTeams().values().stream().sorted(Comparator.comparingInt(Team::getScore)).toList().getLast();
     }
 
     private void fillQuestions(Game game, GameSession gameSession) {
@@ -223,13 +235,6 @@ public class GameSessionService {
         //TODO fill stats
     }
 
-    private Team getWinner(String uuid) {
-        GameSession gameSession = getGameSessionSafe(uuid);
-        GameStage.RESULT.checkPermissionAndThrowExceptionIfNotValid(gameSession.getStage());
-
-        return gameSession.getTeams().values().stream().sorted(Comparator.comparingInt(Team::getScore)).toList().getFirst();
-    }
-
     private void roundStarted(GameSession gameSession) {
         GameStage.ROUND_START.checkPermissionAndThrowExceptionIfNotValid(gameSession.getStage());
 
@@ -264,6 +269,25 @@ public class GameSessionService {
         long c = gameSession.getQuestions().values().stream().filter(v -> !v).count();
         long s = gameSession.getQuestions().size();
         return c == s;
+    }
+
+    private String addNewlines(String input) {
+        StringBuilder output = new StringBuilder();
+        String[] words = input.split(" ");
+        int currentLineLength = 0;
+
+        for (String word : words) {
+            if (currentLineLength + word.length() + 1 <= 8) {
+                output.append(word).append(" ");
+                currentLineLength += word.length() + 1;
+            }
+            else {
+                output.append("\n").append(word).append(" ");
+                currentLineLength = word.length() + 1;
+            }
+        }
+
+        return output.toString().trim();
     }
 
 }
