@@ -1,42 +1,42 @@
 {
 	"game": {
 		"id": 1,
-		"author": "hbb",
-		"name": "Новогодняя игра 2024",
+		"author": "Алеся",
+		"name": "Наши мальчики",
 		"releaseDate": 0
 	},
 	"rounds": [
 		{
 			"id": 1,
 			"gameid": 1,
-			"name": "Фильмы и т.д."
+			"name": "Раунд 1"
 		}
 	],
 	"themes": [
 		{
 			"id": 1,
 			"roundid": 1,
-			"name": "Кино"
+			"name": "угадай по описанию"
 		},
 		{
 			"id": 2,
 			"roundid": 1,
-			"name": "Фильмы и сериалы"
+			"name": "угадай по необычному фото"
 		},
 		{
 			"id": 3,
 			"roundid": 1,
-			"name": "Новый год (для всех)"
+			"name": "угадай по предмету"
 		},
 		{
 			"id": 4,
 			"roundid": 1,
-			"name": "Музыка 90-х"
+			"name": "угадай по почерку"
 		},
 		{
 			"id": 5,
 			"roundid": 1,
-			"name": "Фильмы (СССР)"
+			"name": "Тема 5"
 		}
 	],
 	"questions": [
@@ -44,40 +44,40 @@
 			"id": 1,
 			"themeid": 1,
 			"cost": 100,
-			"title": "В названии первой части фигурируют родственники, второй - сооружения, третьей - монарх",
-			"answer": "Властелин колец",
+			"title": "главный географ класса",
+			"answer": "Максим Кошкодан",
 			"questionType": "TEXT"
 		},
 		{
 			"id": 2,
 			"themeid": 1,
 			"cost": 200,
-			"title": "На этом бульваре состоялся первый кинопоказ",
-			"answer": "бульвар Капуцинок",
+			"title": "главный язык класса",
+			"answer": "Арсений",
 			"questionType": "TEXT"
 		},
 		{
 			"id": 3,
 			"themeid": 1,
 			"cost": 300,
-			"title": "Именно этот режиссер нарисовал портрет Роуз в кинофильме Титаник",
-			"answer": "Джеймс Камерон",
+			"title": "лучший фотограф записей на доске",
+			"answer": "Леша",
 			"questionType": "TEXT"
 		},
 		{
 			"id": 4,
 			"themeid": 1,
 			"cost": 400,
-			"title": "В начале 20го века вышел первый цветной фильм, в 1928 году - первый звуковой фильм. А в 1959 году впервые был предемонстрирован фильм, который с помощью спецтехники передавал еще и это - что?",
-			"answer": "Запах",
+			"title": "главный танцор",
+			"answer": "Максим Полочкин",
 			"questionType": "TEXT"
 		},
 		{
 			"id": 5,
 			"themeid": 1,
 			"cost": 500,
-			"title": "В 2024 году исполняется 100 лет этой кинстуцдии. За это время на ней было снято более 3000 фильмов.",
-			"answer": "Мосфильм",
+			"title": "с ним на рыбалку не ходим",
+			"answer": "Коля Умников",
 			"questionType": "TEXT"
 		},
 
@@ -85,81 +85,87 @@
 			"id": 6,
 			"themeid": 2,
 			"cost": 100,
-			"title": "Сколько фильмов о Знаменитом Гарри Поттере?",
-			"answer": "8 оригинальных фильмов",
-			"questionType": "TEXT"
+			"title": "кто это?",
+			"answer": "Мирон",
+			"questionType": "IMAGE",
+			"questionAttribute": "IMAGE_6"
 		},
 		{
 			"id": 7,
 			"themeid": 2,
 			"cost": 200,
-			"title": "Сколько школ сменила Wednesday до \"Nevermore\"",
-			"answer": "6 школ",
-			"questionType": "TEXT"
+			"title": "кто это?",
+			"answer": "Илья",
+			"questionType": "IMAGE",
+			"questionAttribute": "IMAGE_7"
+
 		},
 		{
 			"id": 8,
 			"themeid": 2,
 			"cost": 300,
-			"title": "Какие фигуры были у надзерателей в сериале \"Игра в кальмара\"?",
-			"answer": "Квадрат, треугольник, круг",
-			"questionType": "TEXT"
+			"title": "кто это?",
+			"answer": "Егор",
+			"questionType":  "IMAGE",
+			"questionAttribute": "IMAGE_8"
 		},
 		{
 			"id": 9,
 			"themeid": 2,
 			"cost": 400,
-			"title": "Любимая рыболовная наживка Wednesday?",
-			"answer": "Граната",
-			"questionType": "TEXT"
+			"title": "кто это?",
+			"answer": "Рома",
+			"questionType":  "IMAGE",
+			"questionAttribute": "IMAGE_9"
 		},
 		{
 			"id": 10,
 			"themeid": 2,
 			"cost": 500,
-			"title": "В каком европейском городе обитает клан Вольтури? (Сериал \"Сумерки\")",
-			"answer": "Вольтерра",
-			"questionType": "TEXT"
+			"title": "кто это?",
+			"answer": "Максим Полочкин",
+			"questionType":  "IMAGE",
+			"questionAttribute": "IMAGE_10"
 		},
 
 		{
 			"id": 11,
 			"themeid": 3,
 			"cost": 100,
-			"title": "В какое время года отмечается Китайский Новый год?",
-			"answer": "Зимой",
+			"title": "тапки рыбы",
+			"answer": "Илья",
 			"questionType": "TEXT"
 		},
 		{
 			"id": 12,
 			"themeid": 3,
 			"cost": 200,
-			"title": "Традиционно испанцы встречают Новый год, съедая 12 штук чего?",
-			"answer": "12 виноградинок",
+			"title": "желтая рубашка в клеточку",
+			"answer": "Рома",
 			"questionType": "TEXT"
 		},
 		{
 			"id": 13,
 			"themeid": 3,
 			"cost": 300,
-			"title": "В какой стране хорошей приметой считается разбить тарелки о чью-то дверь на счастье в Новый год?",
-			"answer": "Дания",
+			"title": "контейнер с едой",
+			"answer": "Ваня",
 			"questionType": "TEXT"
 		},
 		{
 			"id": 14,
 			"themeid": 3,
 			"cost": 400,
-			"title": "В какой стране есть новогодняя традиция - звонить в колокола 108 раз, чтобы избавиться от злых духов и человеческих пороков?",
-			"answer": "Япония",
+			"title": "красные кроссовки",
+			"answer": "Савва",
 			"questionType": "TEXT"
 		},
 		{
 			"id": 15,
 			"themeid": 3,
 			"cost": 500,
-			"title": "Как называется боязнь снега?",
-			"answer": "Хионофобия",
+			"title": "портфель",
+			"answer": "Кирилл",
 			"questionType": "TEXT"
 		},
 
@@ -167,84 +173,92 @@
 			"id": 16,
 			"themeid": 4,
 			"cost": 100,
-			"title": "Что надо было сделать, чтобы осуществить мечту в песне \"Нажми на кнопку\" группы Технология?",
-			"answer": "Нажать на кнопку :)",
-			"questionType": "TEXT"
+			"title": "чей почерк?",
+			"answer": "Коли Личковахи",
+			"questionType": "IMAGE",
+			"questionAttribute": "IMAGE_16"
 		},
 		{
 			"id": 17,
 			"themeid": 4,
 			"cost": 200,
-			"title": "Кто поёт?",
-			"answer": "Валерий Леонтьев",
-			"questionType": "SOUND",
-			"questionAttribute": "SOUND_а3ар457ар4г5поо495пр4пго94"
+			"title": "чей почерк?",
+			"answer": "Егора",
+			"questionType": "IMAGE",
+			"questionAttribute": "IMAGE_17"
 		},
 		{
 			"id": 18,
 			"themeid": 4,
 			"cost": 300,
-			"title": "Этот парень был из тех\nКто просто любит жить",
-			"answer": "\"Беспечный ангел\" - Ария",
-			"questionType": "TEXT"
+			"title": "чей почерк?",
+			"answer": "Максима Кошкодана",
+			"questionType": "IMAGE",
+			"questionAttribute": "IMAGE_18"
 		},
 		{
 			"id": 19,
 			"themeid": 4,
 			"cost": 400,
-			"title": "Что за песня и кто её исполнитель?",
-			"answer": "\"Зима-холода\" - Губин",
-			"questionType": "SOUND",
-			"questionAttribute": "SOUND_234f34fef43f4h4hsdj3j48f9eo"
+			"title": "чей почерк?",
+			"answer": "Вани",
+			"questionType": "IMAGE",
+			"questionAttribute": "IMAGE_19"
 		},
 		{
 			"id": 20,
 			"themeid": 4,
 			"cost": 500,
-			"title": "Что такое \"Санта Лючия\" в одноимённой песне?",
-			"answer": "Местечко на берегу Неаполитанского залива",
-			"questionType": "TEXT"
+			"title": "чей почерк?",
+			"answer": "Кирилла",
+			"questionType": "IMAGE",
+			"questionAttribute": "IMAGE_20"
 		},
 
 		{
 			"id": 21,
 			"themeid": 5,
 			"cost": 100,
-			"title": "Где главному герою накладывают гипс с контрабандными драгоценностями в фильме \"Бриллиантовая рука\"?",
-			"answer": "В аптеке",
-			"questionType": "TEXT"
+			"title": "кто это?",
+			"answer": "Коля Умников",
+			"questionType": "IMAGE",
+			"questionAttribute": "IMAGE_21"
 		},
 		{
 			"id": 22,
 			"themeid": 5,
 			"cost": 200,
-			"title": "Кем работала главная героиня Надя Шевелёва в фильме \"Ирония судьбы, или С лёгким паром!\"?",
-			"answer": "Учительницей русского языка и литературы",
-			"questionType": "TEXT"
+			"title": "кто это?",
+			"answer": "Савва",
+			"questionType": "IMAGE",
+			"questionAttribute": "IMAGE_22"
 		},
 		{
 			"id": 23,
 			"themeid": 5,
 			"cost": 300,
-			"title": "Экзамен по какому предмету сдавали студенты в фильме \"Операция «Ы» и другие приключения Шурика\"?",
-			"answer": "Экзамен по химии",
-			"questionType": "TEXT"
+			"title": "кто это?",
+			"answer": "Леша",
+			"questionType": "IMAGE",
+			"questionAttribute": "IMAGE_23"
 		},
 		{
 			"id": 24,
 			"themeid": 5,
 			"cost": 400,
-			"title": "Дебют какой известной советской актрисы состоялся в фильме \"Гусарская баллада\"\n \n- Надежда Румянцева\n- Любовь Полицук\n- Лариса Голубкина?",
-			"answer": "Лариса Голубкина",
-			"questionType": "TEXT"
+			"title": "кто это?",
+			"answer": "Арсений",
+			"questionType": "IMAGE",
+			"questionAttribute": "IMAGE_24"
 		},
 		{
 			"id": 25,
 			"themeid": 5,
 			"cost": 500,
-			"title": "Где происходят события фильма \nДевчата\n",
-			"answer": "В леспромхозе \"Бодровский\"",
-			"questionType": "TEXT"
+			"title": "кто это?",
+			"answer": "Коля Личковаха",
+			"questionType": "IMAGE",
+			"questionAttribute": "IMAGE_25"
 		}
 	]
 }
